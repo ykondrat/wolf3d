@@ -6,7 +6,7 @@
 /*   By: ykondrat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 17:30:25 by ykondrat          #+#    #+#             */
-/*   Updated: 2017/03/14 17:38:20 by ykondrat         ###   ########.fr       */
+/*   Updated: 2017/10/27 12:42:30 by ykondrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,10 @@ void			wolf_get_map(char map[MX][MY], char *file)
 			map[i.x][i.y] = line[i.y];
 			i.y++;
 		}
+		free(line);
 		i.x++;
 	}
+	free(line);
 	if (close(fd) == -1)
 		wolf_close_error();
 }
